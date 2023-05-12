@@ -4,7 +4,7 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
 #  flyway:
 #    enabled: true
 #    baseline-on-migrate: true
@@ -45,11 +45,6 @@ spring:
   config:
     activate:
       on-profile: prod
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: ${RDS-URL}
-#    username: ${RDS-USERNAME}
-#    password: ${RDS-PASSWORD}
 
 logging:
   level:
