@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: linux-latest
     steps:
       - name: 저장소 Checkout
         uses: actions/checkout@v3
@@ -35,7 +35,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.WAS_HOST }}
-          username: ubuntu
+          username: ec2-user
           key: ${{ secrets.KEY }}
           script: |
             docker stop $(docker ps -a -q) 
