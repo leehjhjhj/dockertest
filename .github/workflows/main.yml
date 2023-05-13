@@ -31,7 +31,7 @@ jobs:
       - name: Docker Hub push
         run: docker push ${{ secrets.DOCKER_IMG }}
 
-      - name: 배포
+      - name: 배포하기
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.WAS_HOST }}
