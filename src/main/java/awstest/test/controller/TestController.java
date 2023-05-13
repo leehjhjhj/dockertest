@@ -18,7 +18,7 @@ public class TestController {
     private final PostService postService;
     @GetMapping("")
     public ResponseEntity test(){
-        return ResponseEntity.ok().body("Hello World!");
+        return ResponseEntity.ok().body("CI, CD 구축 성공!");
     }
 
     @PostMapping("/posts/")
