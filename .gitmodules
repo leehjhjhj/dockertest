@@ -1,0 +1,3 @@
+[submodule "dockertest-privates"]
+	path = dockertest-privates
+	url = https://github.com/leehjhjhj/dockertest-privates.git
