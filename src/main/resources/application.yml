@@ -26,6 +26,7 @@ spring:
   config:
     activate:
       on-profile: local
+    import: application-local.yml
   h2:
     console:
       enabled: true
@@ -45,6 +46,8 @@ spring:
   config:
     activate:
       on-profile: prod
+    import:
+      - classpath:dockertest-privates/application-prod.yml
 
 logging:
   level:
