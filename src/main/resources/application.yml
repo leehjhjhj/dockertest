@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: prod
   jpa:
     open-in-view: false
     hibernate:
@@ -26,7 +26,7 @@ spring:
   config:
     activate:
       on-profile: local
-    import: application-local.yml
+    import: application.yml
   h2:
     console:
       enabled: true
@@ -47,7 +47,7 @@ spring:
     activate:
       on-profile: prod
     import:
-      - classpath:dockertest-privates/application-prod.yml
+      - classpath:dockertest-privates/application.yml
 
 logging:
   level:
