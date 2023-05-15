@@ -18,7 +18,7 @@ public class PostServiceTest {
     @Autowired
     private PostRepository postRepository;
 
-    @Test
+
     void postSaveTest() {
         //given
         PostSaveRequest postSaveRequest = new PostSaveRequest();

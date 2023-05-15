@@ -47,8 +47,7 @@ spring:
     activate:
       on-profile: prod
     import:
-      - classpath:dockertest-privates/application.yml
-
+      - classpath: dockertest-privates/application-prod.yml
 logging:
   level:
     org:
