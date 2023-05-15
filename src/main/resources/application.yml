@@ -1,26 +1,10 @@
 spring:
   profiles:
-    active: prod
+    active: local
   jpa:
     open-in-view: false
     hibernate:
       ddl-auto: create
-#  flyway:
-#    enabled: true
-#    baseline-on-migrate: true
-#    version: 1
-#cloud:
-#  aws:
-#    region:
-#      static: ap-northeast-2
-#    s3:
-#      bucket: k-bnt-15-files
-#    credentials:
-#      access-key: ${S3-ACCESS-KEY}
-#      secret-key: ${S3-SECRET-KEY}
-#    stack:
-#      auto: false
-
 ---
 spring:
   config:
@@ -47,8 +31,8 @@ spring:
     activate:
       on-profile: prod
     import:
-      - classpath: dockertest-privates/application-prod.yml
+      - classpath:dockertest-privates/application-prod.yml
 logging:
   level:
     org:
-      hibernate.sql: info
+      hibernate.sql: debug
