@@ -17,5 +17,4 @@ spring:
   config:
     activate:
       on-profile: prod
-  import:
-    - classpath:application-prod.yml
+    import:

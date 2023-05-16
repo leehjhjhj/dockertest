@@ -1,3 +1,3 @@
-[submodule "dockertest-privates"]
-	path = dockertest-privates
+[submodule "src/main/resources/sub-config"]
+	path = src/main/resources/sub-config
 	url = https://github.com/leehjhjhj/dockertest-privates.git
