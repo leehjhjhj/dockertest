@@ -30,9 +30,5 @@ spring:
   config:
     activate:
       on-profile: prod
-    import:
-      - classpath:dockertest-privates/application-prod.yml
-logging:
-  level:
-    org:
-      hibernate.sql: debug
+  import:
+    - classpath:dockertest-privates/application-prod.yml
