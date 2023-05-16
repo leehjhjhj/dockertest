@@ -22,13 +22,13 @@ repositories {
 	mavenCentral()
 }
 
-//task copyPrivate(type: Copy) {
-//	copy {
-//		from './dockertest-privates'	// ''로 감싸기 ex) from 'Auth-service-sub'
-//		include "*.yml"
-//		into 'src/main/resources'	// 빌드 시에 넣을 경로
-//	}
-//}
+task copyPrivate(type: Copy) {
+	copy {
+		from './dockertest-privates'	// ''로 감싸기 ex) from 'Auth-service-sub'
+		include "*.yml"
+		into 'src/main/resources'	// 빌드 시에 넣을 경로
+	}
+}
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

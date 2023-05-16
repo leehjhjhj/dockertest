@@ -10,20 +10,7 @@ spring:
   config:
     activate:
       on-profile: local
-    import: application.yml
-  h2:
-    console:
-      enabled: true
-  jpa:
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: true
-
-logging:
-  level:
-    org:
-      hibernate.sql: debug
+    import: application-local.yml
 ---
 
 spring:
@@ -31,4 +18,4 @@ spring:
     activate:
       on-profile: prod
   import:
-    - classpath:dockertest-privates/application-prod.yml
+    - classpath:application-prod.yml
