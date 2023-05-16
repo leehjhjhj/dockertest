@@ -4,18 +4,56 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    version: 1
+cloud:
+  aws:
+    region:
+      static: ${AWS_REGION}
+    s3:
+      bucket: ${AWS_S3_BUCKET_NAME}
+    credentials:
+      access-key: ${AWS_ACCESS_KEY_ID}
+      secret-key: ${AWS_SECRET_ACCESS_KEY}
+    stack:
+      auto: false
+
 ---
 spring:
   config:
     activate:
       on-profile: local
-    import: application-local.yml
----
+  h2:
+    console:
+      enabled: true
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
 
+logging:
+  level:
+    org:
+      hibernate.sql: debug
+
+---
 spring:
   config:
     activate:
       on-profile: prod
     import:
-      - classpath:sub-config/application-prod.yml
+      - classpath:be-config/application.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${AWS_RDS_URL}
+    username: ${AWS_RDS_USERNAME}
+    password: ${AWS_RDS_PASSWORD}
+
+logging:
+  level:
+    org:
+      hibernate.sql: info
