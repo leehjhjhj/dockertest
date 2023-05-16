@@ -18,3 +18,4 @@ spring:
     activate:
       on-profile: prod
     import:
+      - classpath:sub-config/application-prod.yml
