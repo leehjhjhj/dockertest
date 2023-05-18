@@ -47,4 +47,8 @@ jobs:
             docker stop $(docker ps -a -q) 
             docker rm $(docker ps -a -q) 
             docker pull ${{ secrets.DOCKER_IMG }}
-            docker run -d -p 8080:8080 ${{ secrets.DOCKER_IMG }}
+            # docker run -d -p 8080:8080 ${{ secrets.DOCKER_IMG }}
+            chmod 777 ./deploy.sh
+            ./deploy.sh
+            docker image prune -f
+            

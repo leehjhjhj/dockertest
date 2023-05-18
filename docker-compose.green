@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  api:
+    #image: ${DOCKER_REGISTRY}/${DOCKER_APP_NAME}:${IMAGE_TAG}
+    image: hjdeploy/test
+    #container_name: ${DOCKER_APP_NAME}-blue
+    container_name: green
+
+    environment:
+      - LANG=ko_KR.UTF-8
+      - UWSGI_PORT=8000
+
+    ports:
+      - "8080:8080"
