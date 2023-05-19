@@ -17,5 +17,10 @@ spring:
   config:
     activate:
       on-profile: prod
-  import:
-    - classpath:sub-config/application-prod.yml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DATASOURCE_URL}
+    username: ${DATASOURCE_USERNAME}
+    password: ${DATASOURCE_PASSWORD}
+#  import:
+#    - classpath:sub-config/application-prod.yml
