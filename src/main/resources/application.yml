@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   jpa:
     open-in-view: false
     hibernate:
@@ -11,8 +11,15 @@ spring:
     activate:
       on-profile: local
     import: application-local.yml
----
 
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  import:
+    - classpath:sub-config/application-dev.yml
+---
 spring:
   config:
     activate:
@@ -22,5 +29,3 @@ spring:
     url: ${DATASOURCE_URL}
     username: ${DATASOURCE_USERNAME}
     password: ${DATASOURCE_PASSWORD}
-#  import:
-#    - classpath:sub-config/application-prod.yml

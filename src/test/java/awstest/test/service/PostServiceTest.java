@@ -19,8 +19,7 @@ public class PostServiceTest {
     @Autowired
     private PostRepository postRepository;
 
-//    @Test
-    @Rollback(value = false)
+    @Test
     void postSaveTest() {
         //given
         PostSaveRequest postSaveRequest = new PostSaveRequest();
