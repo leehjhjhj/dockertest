@@ -45,9 +45,6 @@ jobs:
           username: ec2-user
           key: ${{ secrets.KEY }}
           script: |
-            echo "export DATABASE_URL=${{ secrets.DATABASE_URL }}"
-            echo "export DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}"
-            echo "export DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}"
             sudo chmod 777 ./deploy.sh
             ./deploy.sh
             docker image prune -f
